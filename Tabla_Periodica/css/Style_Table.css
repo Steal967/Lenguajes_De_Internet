@@ -1,0 +1,157 @@
+table {
+    margin: 0 auto;   /* Centra horizontalmente */
+}
+.title_table{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.Elements{
+    position: relative;
+    border: 1px solid black;
+    padding: 4px;
+    width: 70px;
+    height: 70px;
+    font-family: 'Montserrat';
+    border-radius: 5px;
+}
+.Element{
+    position: relative;
+    border: 1px solid white;
+    padding: 4px;
+    width: 70px;
+    height: 70px;
+    font-family: 'Montserrat';
+    border-radius: 15px;
+}
+.Elements:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+.Element:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+.Elements .number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Elements .mass_atomic {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 15px;
+}
+.Elements .simbol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra perfecto */
+    font-size: 25px;
+    font-weight: bold;
+}
+.Elements .name {
+    position: absolute;
+    bottom: 5px;       /* lo pega al borde inferior */
+    left: 50%;         /* lo lleva al centro horizontal */
+    transform: translateX(-50%); /* lo centra perfectamente */
+    font-size: 12px;   /* puedes ajustar el tamaño */
+    text-align: center;
+}
+.Elements .name_color {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra perfecto */
+    font-size: 15px;   /* puedes ajustar el tamaño */
+    text-align: center;
+    font-weight: bold
+}
+.no_metales {
+    background-color: #f58021;
+    color: #000;
+}
+.gases_nobles{
+    background-color: #006a36;
+    color: #ffffff;
+}
+.metales_alcalinos {
+    background-color: #002a4e;
+    color: #ffffff;
+}
+.alcalinoterreos {
+    background-color: #fdba12;
+    color: #000;
+}
+.metales_transicion {
+    background-color: #0088ce;
+    color: #ffffff;
+}
+.halogenos {
+    background-color: #a2b427;
+    color: #000;
+}
+.metaloides {
+    background-color: #ed1944;
+    color: #ffffff;
+}
+.otros_metales {
+    background-color: #781e77;
+    color: #ffffff;
+}
+.lantanoides {
+    background-color: #cbd48e;
+    color: #000;
+}
+.actinidos {
+    background-color: #67a484;
+    color: #000;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 45%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  border: 3px solid #000000;
+  padding: 10px;
+  width: 125px;
+  border-radius: 10px;
+  font-size: 12px;
+  white-space: normal;
+}
+
+.Element_tool {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 45%;
+  transform: translateY(-50%);
+  background: white;
+  color: black;
+  border: 3px solid #000000;
+  padding: 10px;
+  width: 400px;
+  border-radius: 10px;
+  font-size: 12px;
+  white-space: normal;
+}
+
+.Elements:hover .tooltip {
+  display: block;
+}
+.Element:hover .Element_tool{
+  display: block;
+}
