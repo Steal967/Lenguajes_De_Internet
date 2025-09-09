@@ -17,11 +17,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Títulos principales */
 .titulares {
   text-align: center;
   margin: 20px 0;
   font-size: 28px;
   color: #e67e22; /* Naranja suave */
+  scroll-margin-top: 110px; /* evita que se tape con el header sticky */
 }
 
 /* Header */
@@ -52,7 +54,7 @@ header {
   width: 50px;
 }
 
-.branding h1 {
+.branding h2 {
   font-size: 22px;
   font-weight: bold;
   color: #333;
@@ -73,12 +75,12 @@ header {
 }
 
 .navbar ul li a:hover {
-  color: #e67e22; /* Naranja suave */
+  color: #e67e22;
 }
 
 /* Botones de acción */
 .acciones button {
-  background: #e67e22; /* Naranja sobrio */
+  background: #e67e22;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -90,17 +92,19 @@ header {
 }
 
 .acciones button:hover {
-  background: #d35400; /* Naranja más fuerte */
+  background: #d35400;
 }
 
-/* Sección noticias */
+/* Secciones */
 section {
   padding: 30px 40px;
-  scroll-margin-top: 100px; 
 }
-
-/* Títulos de secciones */
 h2 {
+  padding-top: 30px;
+  margin-top: -30px;
+}
+/* Subtítulos */
+h3 {
   margin-bottom: 15px;
   font-size: 22px;
   border-left: 5px solid #900ef2;
@@ -118,7 +122,7 @@ h2 {
 
 .tabla-noticias th, .tabla-noticias td {
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 20px;
   text-align: left;
 }
 
@@ -127,53 +131,63 @@ h2 {
   color: #333;
 }
 
-/* Noticias destacadas */
-.noticias-destacadas article {
-  background: #fff;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.tabla-noticias tbody tr:hover {
+  background: #ffd1bb;
 }
 
-.noticias-destacadas article {
-  background: #fff;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Contenedor de cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 12px;
 }
 
-.noticias-destacadas img {
-  max-width: 100%;
-  margin-top: 15px;
-  border-radius: 6px;
-}
-
-/* ---- Noticias con imagen a la izquierda y texto a la derecha ---- */
-.noticia {
-  display: flex;              /* Activa flexbox */
-  align-items: center;        /* Centra verticalmente */
-  gap: 15px;                  /* Espacio entre imagen y texto */
-  margin-bottom: 20px;
+/* Card base */
+.card, 
+.card-noticia, 
+.card-contacto {
+  display: flex;
+  gap: 15px;
   background: #fff;
   padding: 15px;
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.noticia img {
-  width: 120px;               /* Tamaño fijo */
-  height: 80px;
-  object-fit: cover;          /* Recorta sin deformar */
+.card:hover, 
+.card-noticia:hover, 
+.card-contacto:hover {
+  transform: translateY(-6px);
+  background: #ffd1bb;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* Imágenes en cards */
+.card-noticia img {
+  width: 300px;
+  flex-direction: column;
+  height: 200px;
+  object-fit: cover;
   border-radius: 6px;
 }
 
-.noticia-texto {
-  flex: 1;                    /* El texto ocupa el resto del espacio */
+.card-contacto img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-.noticias-destacadas img {
+/* Texto dentro de cards */
+.noticia-texto {
+  flex: 1;
+}
+
+/* Contacto */
+.contacto img {
   max-width: 100%;
-  margin-top: 15px;
   border-radius: 6px;
 }
 
@@ -187,13 +201,25 @@ footer {
 }
 
 a {
-  color: #e67e22; /* Naranja sobrio */
-  text-decoration: none; /* quita el subrayado */
-  font-weight: bold;      /* opcional */
+  color: #e67e22;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
-  color: #1ca1f0; /* Color cuando pasas el mouse */
-  text-decoration: underline; /* opcional */
+  color: #1ca1f0;
+  text-decoration: underline;
 }
 
+/* Responsive */
+@media (max-width: 640px) {
+  .card, .card-noticia, .card-contacto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card img, .card-noticia img, .card-contacto img {
+    width: 100%;
+    height: auto;
+  }
+}
